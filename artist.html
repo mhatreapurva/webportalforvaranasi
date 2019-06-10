@@ -1,0 +1,172 @@
+<?php
+// You'd put this code at the top of any "protected" page you create
+
+// Always start this first
+session_start();
+if ( isset( $_SESSION['ooid'] ) ) {
+  $flag1=0; $flag2=0; $flag3=0; $flag4=0; $flag5=0; $flag6=0;
+	         $voterid=$_SESSION['ooid'];
+            $eid=$_SESSION['eid'];
+
+?>
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        input[type=text], select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+        label {
+            padding: 12px 12px 12px 0;
+            display: inline-block;
+        }
+
+        input[type=submit] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            float: right;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+       .container {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+
+        .col-25 {
+            float: left;
+            width: 25%;
+            margin-top: 6px;
+        }
+
+        .col-75 {
+            float: left;
+            width: 50%;
+            margin-top: 6px;
+
+        }
+
+    </style>
+    <style>
+        input[type="submit"]{
+            /* change these properties to whatever you want */
+            background-color: #555;
+            color: #fff;
+            border-radius: 10px;
+        }
+    </style>
+        <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="styles4.css">
+    <title>CSS MenuMaker</title>
+    <meta charset=utf-8 />
+    <title>JS Bin</title>
+    <!--[if IE]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+</head>
+<script>
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#blah')
+                    .attr('src', e.target.result)
+                    .width(150)
+                    .height(200);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>
+<body>
+
+<div id='cssmenu' style='position:fixed'>
+    <div class="company-logo" >
+        <h1>SPACE FOR COMPANY LOGO</h1>
+    </div>
+    <ul>
+
+        <li id="1" onclick="changeclass(this.id)" ><a href='#'   >Profile</a></li>
+        <li><a href='#top-ones'>Upload</a></li>
+        <li><a href='#categories'>Your Products</a></li>
+
+
+        <!-- <li><a href='#'>Sign Up</a></li> -->
+    </ul>
+</div>
+<br>
+<!-- <div class="featured">
+<div>
+</dithv> -->
+<div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <form action="/action_page.php" method="post" id="form1">
+<div id="row">
+    <div id="column" class="column1">
+        <img id="blah" src="abc.jpg" alt="abc.jpg"  style="width:308px;height:308px;right:81px;padding-left: 90px;padding-right: -80px;"/>
+
+        <input type='file' onchange="readURL(this);" style="position:relative; right :200px; top: 20px;  "/>
+    </div>
+
+    <div id="column2" class="column2">
+
+
+        Product Name:<br>        <br>
+        <input type="text" name="product_name" placeholder="Enter Name of Product"><br>        <br>
+        Product  Category:<br>        <br>
+        <select id="states" class="form-control" name="product_category">
+            <option value="unknown">HANDLOOM</option>
+            <option value="Andaman and Nicobar Islands">PAINTINGS</option>
+            <option value="Andhra Pradesh"> WOODEN ART</option>
+            <option value="Arunachal Pradesh">CRAFT ITEMS</option>
+
+
+        </select>
+        <br>
+        Product cost:<br>        <br>
+        <input type="text" name="product_cost" placeholder="Enter Price">        <br>        <br>
+        Description In short:<br>        <br>
+        <textarea type="text" name="product_description" placeholder="Enter Description" style="height:200px"></textarea>   <br>
+        <button type="submit" form="form1" value="Submit" style=" background-color: #555;
+            color: #fff;
+            border-radius: 10px;">Submit</button>
+    </div>
+
+    </div>
+    </form>
+
+       </div>
+    </div>
+
+</body>
+</html>
